@@ -1,0 +1,67 @@
+﻿@using Game.BLL.Interfaces
+@model GameFormViewModel
+@inject IUnitOfWork unitOfWork
+@{
+	var departments = new SelectList(unitOfWork.GameRepository.GetAllGamesAsync().Result, "Id", "Name");
+}
+<div class="form-group">
+	<label asp-for="@Model.Name" class="control-label"></label>
+	<input asp-for="@Model.Name" class="form-control" />
+	@* //34an el validation y3ml check 3la el model *@
+	<span asp-validation-for="@Model.Name" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Devices" class="control-label"></label>
+	<input asp-for="@Model.Devices" class="form-control" />
+	<span asp-validation-for="@Model.Devices" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+	<label asp-for="@Model.Categories" class="control-label"></label>
+	<input asp-for="@Model.Categories" class="form-control" />
+	<span asp-validation-for="@Model.Categories" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.SelectedDevices" class="control-label"></label>
+	<input asp-for="@Model.SelectedDevices" class="form-control" />
+	<span asp-validation-for="@Model.SelectedDevices" class="text-danger"></span>
+</div>
+@* <div class="form-group">
+	<label asp-for="@Model." class="control-label"></label>
+	<input asp-for="@Model.Phone" class="form-control" />
+	<span asp-validation-for="@Model.Phone" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Salary" class="control-label"></label>
+	<input asp-for="@Model.Salary" class="form-control" />
+	<span asp-validation-for="@Model.Salary" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.HireDate" class="control-label"></label>
+	<input type="date" asp-for="@Model.HireDate" class="form-control" />
+	<span asp-validation-for="@Model.HireDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<div class="form-check">
+		<input asp-for="@Model.IsActive" type="checkbox" class="form-check-input" />
+		<label asp-for="@Model.IsActive" class="form-check-label control-label"></label>
+	</div>
+	<span asp-validation-for="@Model.IsActive" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.DepartmentId" class="col-form-label"></label>
+	<select asp-for="@Model.DepartmentId" class="form-control" asp-items="@departments">
+		<option>--- Select Department ---</option>
+	</select>
+	<span asp-validation-for="@Model.DepartmentId" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="@Model.Image" class="col-form-label"></label>
+	<input asp-for="@Model.Image" type="file" class="form-control" />
+</div> *@
+
+
+
+
+
+

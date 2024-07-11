@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model IdentityRole
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Role Details</h1>
+
+<div>
+    <partial name="PartialViews/DetailsDeletePartialView" model="@Model" />
+</div>
+<div>
+    <a asp-action="Update" asp-route-id="Id">Update</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
